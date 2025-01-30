@@ -1,18 +1,18 @@
 export interface CommentModelDataResult {
-    total?: number;
-    data?: CommentModel[];
+    total: number;
+    data: CommentModel[];
 }
 
-interface CommentModel {
+export interface CommentModel {
     id: string;
-    createDT?: string;
+    createDT: string;
     updateDT?: string;
-    user?: UserModel;
-    userGuid?: string;
+    user: UserModel;
     text?: string | null;
-    isLike?: boolean | null;
+    likes?: number | null;
+    dislikes?: number | null;
 }
 
-interface UserModel {
+export interface UserModel {
     username: string;
 }
