@@ -11,6 +11,7 @@ export interface CommentModel {
     text?: string | null;
     likes?: number | null;
     dislikes?: number | null;
+    images?: string[] | null;
 }
 
 export interface UserModel {

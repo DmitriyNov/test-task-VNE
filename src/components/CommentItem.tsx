@@ -33,6 +33,11 @@ export default function CommentItem(props: {item: CommentModel}) {
             <div className="comment_item__data">
                 {item.text}
             </div>
+            <div className="comment_item-images">
+                {(!item.images) || item.images.map((item: string) => (
+                    <img src={item} />
+                ))}
+            </div>
             <div className="comment_item__footer">
                 <div className="comment_item__grade-container">
                     <span className="material-symbols-outlined">

@@ -1,24 +1,26 @@
 import { useOutletContext } from 'react-router-dom'
 import { CommentModel } from '../models/CommentModelDataResult'
-import CommentItem from './CommentItem'
 import { useEffect, useState } from 'react';
+import CommentItem from './CommentItem'
+import Loader from './Loader'
 
 export default function CommentList() {
 
     const [ commentList ] = useOutletContext<Context>(); //В документации React Router указан такой интерфейс для контекста, только непонятно, откуда его брать
 
-    const [ready, setReady] = useState<boolean>(false);
+    const [isReady, setReady] = useState<boolean>(false);
+    // Имитация загрузки данных
     useEffect(() => {
         setTimeout(() => {
             setReady(true);
         }, 2 * 1000)
     }, []);
 
-    if (!ready) {
+    if (!isReady) {
         return (
-            <>
-            <span>Загрузка</span>
-            </>
+            <span>
+                Загрузка<Loader />
+            </span>
         )
     }
 

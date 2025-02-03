@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import moment from 'moment'
 import CommentData from './CommentData'
 import LikeDislikeButton from './LikeDislikeButton'
+import Loader from './Loader'
 
 export default function Comment () {
 
@@ -16,18 +17,19 @@ export default function Comment () {
         navigation("/list"); 
     };
 
-    const [ready, setReady] = useState<boolean>(false);
+    const [isReady, setReady] = useState<boolean>(false);
+    // Имитация загрузки данных
     useEffect(() => {
         setTimeout(() => {
             setReady(true);
         }, 1 * 1000)
     }, []);
 
-    if (!ready) {
+    if (!isReady) {
         return (
-            <>
-            <span>Загрузка</span>
-            </>
+            <span>
+                Загрузка<Loader />
+            </span>
         )
     }
 
@@ -51,7 +53,7 @@ export default function Comment () {
                     </span>}
                 </div>
             </div>
-            <CommentData text={currentComment.text} />
+            <CommentData text={currentComment.text} images={currentComment.images}/>
             <div className="comment__footer">
                 <LikeDislikeButton type={true} count={currentComment.likes} />
                 <LikeDislikeButton type={false} count={currentComment.dislikes} />
