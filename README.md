@@ -1,50 +1,24 @@
-# React + TypeScript + Vite
+## Тестовое задание VNE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Прототип приложения](https://DmitriyNov.github.io/test-task-VNE) (Github Pages)
 
-Currently, two official plugins are available:
+[Текст задания](https://github.com/DmitriyNov/test-task-VNE/blob/main/public/TestTask_WEAR.md)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Для запуска приложения локально скачайтие репозиторий и выполните в терминале следующие команды:
+- `npm install`
+- `npm run dev`
 
-## Expanding the ESLint configuration
+### Обоснование отступленй от задания
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
++ не использовал в проекте библиотеку `react-like-dislike-button`, так как не нашёл библиотеку с таким названием, решил написать всё сам, функционал не такой уж сложный;
++ немного поменял интерфейсы для используемых данных: 
+  - сделал большую часть свойств обязательными,
+  - заменил свойство `isLike: boolean` на `likes: number` и `dislikes: number` для подсчёта количества лайков/дизлайков,
+  - добавил свойство `images: string[]` в котором будет записан массив с ссылками на приклеплённые изображения,
+  - убрал свойство `userGuid: string`, не догадался, зачем оно нужно было(,
 
-- Configure the top-level `parserOptions` property like this:
+### Мои комментарии к решению
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Суммарно на задание потратил около 16-18 часов. В начале возникли сложности с инициализацией через create-react-app, было очень много конфликтов версий библиотек, пытался решить, но плюнул и переделал через vite. Так же ранее не работал с Tailwind, поэтому пришлось долго изучать документацию.
+2. Постарался максимально выполнить все требования, не сделал только тестирование, потому что и так потратил много времени на выполнение Вообще на курсах почти ко всем заданиям требовали делать тесты на jest, но с react+ts пока не пробовал тесты писать.
+3. Сейчас смотрю на получившийся результат и понимаю, что нужно было сильнее разбивать всё на компоненты, некоторые получились достаточно громоздкими и сложными.
