@@ -18,14 +18,16 @@ export default function CommentList() {
 
     if (!isReady) {
         return (
-            <span>
-                Загрузка<Loader />
-            </span>
+            <div className="mx-auto mt-50 w-20 flex justify-start align-middle">
+                <span className="text-xl font-bold">
+                    Загрузка<Loader />
+                </span>
+            </div>
         )
     }
 
     return (
-        <div className="comment_list__container">
+        <div className="comment_list__container w-240 mx-auto mb-10 flex flex-col gap-5">
             {commentList.data.map((item: CommentModel) => (
                 <CommentItem key={item.id} item={item} />
             ))}

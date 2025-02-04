@@ -24,7 +24,7 @@ export default function LikeDislikeButton(props: {type: boolean, count: number |
     }
 
     return(
-        <button className="like_dislike_button" onClick={changeLikesDislikesCount}>
+        <button className="like_dislike_button w-20 p-1 flex justify-center items-center gap-2 cursor-pointer rounded bg-gray-100 hover:bg-gray-200" onClick={changeLikesDislikesCount}>
             {(type) ? 
             <span className="material-symbols-outlined">
                 favorite
@@ -32,7 +32,7 @@ export default function LikeDislikeButton(props: {type: boolean, count: number |
             <span className="material-symbols-outlined">
                 thumb_down
             </span>}
-            <span>{count || 0}</span>
+            <span className="text-lg font-medium">{count || 0}</span>
         </button>
     )
 }
