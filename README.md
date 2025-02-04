@@ -1,7 +1,5 @@
 ## Тестовое задание VNE
 
-[Прототип приложения](https://DmitriyNov.github.io/test-task-VNE) (Github Pages)
-
 [Текст задания](https://github.com/DmitriyNov/test-task-VNE/blob/main/public/TestTask_WEAR.md)
 
 Для запуска приложения локально скачайтие репозиторий и выполните в терминале следующие команды:
